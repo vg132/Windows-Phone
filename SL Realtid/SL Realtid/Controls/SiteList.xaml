@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SLRealtid.Controls.SiteList"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	mc:Ignorable="d"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	d:DesignHeight="480"
+	d:DesignWidth="480">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<toolkit:PhoneTextBox Name="FilterTextBox" TextChanged="FilterTextBox_TextChanged" Grid.Row="0" Hint="Sök" ActionIcon="/Assets/Images/appbar.cancel.rest.png" ActionIconTapped="FilterTextBox_ActionIconTapped" HidesActionItemWhenEmpty="True" />
+		<ListBox Tap="SiteListBox_Tap" SelectionChanged="SiteListBox_SelectionChanged" Name="SiteListBox" Margin="0,0,0,10" Grid.Row="1" ItemsSource="{Binding Converter={StaticResource SiteGrouper}}" />
+	</Grid>
+</UserControl>

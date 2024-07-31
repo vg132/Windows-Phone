@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{EDA6ED57-0993-4482-B7B1-4DCFEC982EB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL Realtid", "SL Realtid\SL Realtid.csproj", "{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|ARM.Build.0 = Debug|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|ARM.Deploy.0 = Debug|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|x86.ActiveCfg = Debug|x86
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|x86.Build.0 = Debug|x86
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Debug|x86.Deploy.0 = Debug|x86
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|ARM.ActiveCfg = Release|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|ARM.Build.0 = Release|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|ARM.Deploy.0 = Release|ARM
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|x86.ActiveCfg = Release|x86
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|x86.Build.0 = Release|x86
+		{7E4E1CE0-6C84-4565-8530-1B41206FE7ED}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SLRealtid.Controls.FilterSettings"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	mc:Ignorable="d"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	d:DesignHeight="480"
+	d:DesignWidth="480">
+
+	<ScrollViewer>
+		<StackPanel>
+			<CheckBox Content="Visa" Name="ShowCheckBox" Checked="ShowCheckBox_Checked" Unchecked="ShowCheckBox_Unchecked" />
+			<StackPanel Name="ContentStackPanel">
+				<StackPanel>
+					<TextBlock Text="Dölj följande linjer" />
+					<ListBox x:Name="LineListBox" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel>
+									<CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected}" />
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+				<StackPanel>
+					<TextBlock Text="Dölj också följande linjer" />
+					<toolkit:PhoneTextBox Name="ExcludedLinesTextBox" Hint="Separera linjer med ett komma (,)" />
+				</StackPanel>
+				<StackPanel>
+					<TextBlock Text="Dölj destinationer som innehåller följande text" />
+					<toolkit:PhoneTextBox Name="ExcludeFilterTextBox" Hint="Separera texter med ett komma (,)" />
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

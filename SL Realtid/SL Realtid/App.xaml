@@ -1,0 +1,47 @@
+﻿<Application 
+    x:Class="SLRealtid.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:SLRealtid.Converters"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+	<!--Application Resources-->
+	<Application.Resources>
+		<local:VisibilityConverter x:Key="BoolToVisibility" />
+		<local:InvertedVisibilityConverter x:Key="InvertedBoolToVisibility" />
+		<local:DepartureGroupConverter x:Key="DepartureGrouper" />
+		<local:SiteGroupConverter x:Key="SiteGrouper" />
+
+		<DataTemplate x:Key="DepartureTemplate">
+			<Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="300" />
+					<ColumnDefinition Width="180" />
+				</Grid.ColumnDefinitions>
+				<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Destination}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextLargeStyle}" />
+				<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding TimeTableTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+				<TextBlock Grid.Row="1" Grid.Column="0" Text="Ny beräknad tid" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" Foreground="Red" Visibility="{Binding ShowExpected}" />
+				<TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ExpectedTime}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSmallStyle}" Foreground="Red" Visibility="{Binding ShowExpected}" />
+			</Grid>
+		</DataTemplate>
+		<DataTemplate x:Key="SiteTemplate">
+			<TextBlock Text="{Binding Name}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextLargeStyle}" />
+		</DataTemplate>
+		<DataTemplate x:Key="GroupHeadingTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding}" Margin="10,0,0,0" />
+			</StackPanel>
+		</DataTemplate>
+	</Application.Resources>
+
+	<Application.ApplicationLifetimeObjects>
+		<!--Required object that handles lifetime events for the application-->
+		<shell:PhoneApplicationService 
+            Launching="Application_Launching" Closing="Application_Closing" 
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+	</Application.ApplicationLifetimeObjects>
+</Application>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SLRealtid.Controls.FavoriteList"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+	mc:Ignorable="d"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	d:DesignHeight="480"
+	d:DesignWidth="480">
+
+	<Grid>
+		<ListBox Name="FavoriteListBox" Margin="0,0,0,10" Grid.Row="1">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+						<TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" Tap="TextBlock_Tap" Tag="{Binding Id}" />
+						<toolkit:ContextMenuService.ContextMenu>
+							<toolkit:ContextMenu Visibility="{Binding ShowContextMenu}" Opened="ContextMenu_Opened">
+								<toolkit:MenuItem Name="AddTileMenuItem" Header="skapa tile" Click="AddTileMenuItem_Click" />
+								<toolkit:MenuItem Name="RemoveTileMenuItem" Header="ta bort tile" Click="RemoteTileMenuItem_Click" />
+								<toolkit:MenuItem Header="ta bort" Click="DeleteMenuItem_Click" />
+							</toolkit:ContextMenu>
+						</toolkit:ContextMenuService.ContextMenu>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SLRealtid.Pages.SaveWithFilterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+		xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+	<Grid Background="Transparent" x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<TextBlock x:Name="TitleTextBlock" Text="SL Realtid" Style="{StaticResource PhoneTextTitle2Style}" Grid.Row="0" Margin="22,0,0,0" />
+		<StackPanel Grid.Row="1">
+			<TextBlock Text="spara" Style="{StaticResource PhoneTextTitle1Style}" Margin="22,0,0,0" />
+			<TextBlock Name="HelpTextBlock" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle3Style}" Margin="22,15,22,15" />
+			<toolkit:PhoneTextBox Name="NameTextBox" Hint="Namn" Margin="11,0,11,0" />
+		</StackPanel>
+	</Grid>
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default">
+			<shell:ApplicationBarIconButton IconUri="/Assets/Images/appbar.check.rest.png" Text="spara" Click="SaveButton_Click" />
+			<shell:ApplicationBarIconButton IconUri="/Assets/Images/appbar.cancel.rest.light.png" Text="avbryt" Click="CancelButton_Click" />
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
